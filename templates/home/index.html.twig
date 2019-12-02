@@ -1,0 +1,4 @@
+{% extends('base.html.twig') %}
+{% block body %}
+    <h1>This is some  <a href="{{ path('home', {name: 'John'}) }}">file with some params</a></h1>
+{% endblock %}

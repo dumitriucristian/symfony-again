@@ -52,3 +52,5 @@ services:
         container_name: sf4_maildev
         ports:
           - 8001:80
+#if problems with docker you can find details here:
+#https://medium.com/@romaricp/the-perfect-kit-starter-for-a-symfony-4-project-with-docker-and-php-7-2-fda447b6bca1

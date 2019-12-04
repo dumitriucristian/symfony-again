@@ -40,11 +40,17 @@ class PostController extends AbstractController
         //$post->setTitle('This is going to be a tilte');
         $post = new Post();
         $form = $this->createForm(PostType::class, $post);
-
+        $form->handleRequest($request);
         //entity manager
         $em = $this->getDoctrine()->getManager();
-       // $em->persist($post);
-        //$em->flush();
+
+        if($form->isSubmitted()){
+            $em->persist($post);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('postindex'));
+
+        }
 
         //return a response
         return $this->render('post/create.html.twig',[
